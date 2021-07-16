@@ -4,6 +4,7 @@
   - [JavaScript](fe/javascript)
   - [CSS](fe/css)
   - [小程序](fe/xcx)
+  - [规范](fe/standard)
 
 - Tools
 
