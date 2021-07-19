@@ -186,6 +186,20 @@ data 数据具有数据层级结构，切勿过度扁平化或者嵌套层级过
 <div>> 1 & < 12</div>
 ```
 
+#### 项目 html 内容
+
+`app-main`与`yzp-container`样式不允许做修改, 内容主体均在`yzp-container`, 定义新块级元素独立编写样式等
+
+```html
+<template>
+  <div class="yzp-container">
+    <div class="xxxxx-main">
+      // 此处为主体内容
+    </div>
+  </div>
+</template>
+```
+
 ### CSS
 
 `style` 中 `class` 命名应遵守 `BEM` 思想 🔗[BEM Link](https://docs.emmet.io/filters/bem/)
