@@ -1,6 +1,8 @@
 # 前端开发规范
 
-## 应用范围
+部分已经在项目`Eslint` + `prettier`中进行体现
+
+## 项目范围
 
 云智屏管理系统项目开发, 默认包含`内容管理系统(CMS)`,`编单系统(mtedit)`, `监播系统(monitor)`
 
@@ -107,6 +109,10 @@ function getName{
 
 ### JavaScript
 
+#### 使用严格等
+
+总是使用 `===` 精确的比较操作符, 避免在判断的过程中, 由 `JavaScript` 的强制类型转换所造成的困扰
+
 #### 声明规范
 
 尽量使用 `let` 声明变量, 少用 `var`
@@ -184,6 +190,8 @@ data 数据具有数据层级结构，切勿过度扁平化或者嵌套层级过
 
 `style` 中 `class` 命名应遵守 `BEM` 思想 🔗[BEM Link](https://docs.emmet.io/filters/bem/)
 
+**Tips:** 不建议在元素上内嵌 style
+
 #### 嵌套层级
 
 浏览器在解析 `css` 时，是按照从右到左递归匹配的，过深的层级嵌套不仅影响性能，而且还会导致样式阅读性和代码维护性降低，一般层架控制在 **`5`** 层之内
@@ -219,6 +227,17 @@ data 数据具有数据层级结构，切勿过度扁平化或者嵌套层级过
     background-color: red;
   }
 </style>
+```
+
+#### 0 后面不带单位
+
+```css
+/* good */
+padding-bottom: 0;
+margin: 0;
+/* bad */
+padding-bottom: 0px;
+margin: 0em;
 ```
 
 #### 双引号
