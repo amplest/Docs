@@ -268,6 +268,20 @@ margin: 0em;
 
 并以 `Formatting Model（布局方式、位置）` > `Box Model（尺寸）` > `Typographic（文本相关）` > ` Visual（视觉效果）` 的顺序书写, 提高代码可读性
 
+#### 关于字重与font-family字体粗细类型的对应关系
+
+| font-weight | 字重 |
+| ---- | ---------------------------- |
+| 100  | Thin                         |
+| 200  | ExtraLight(UltraLight)       |
+| 300  | Light                        |
+| 400  | Regular(Normal、Book、Roman) |
+| 500  | Medium                       |
+| 600  | SemiBold(DemiBold)           |
+| 700  | Bold                         |
+| 800  | ExtraBold(UltraBold)         |
+| 900  | Black(Heavy)                 |
+
 **Tips:**
 
 - Formatting Model 相关属性包括：position / top / right / bottom / left / float / display / overflow 等
