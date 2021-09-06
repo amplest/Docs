@@ -589,9 +589,7 @@ table td {
 }
 ```
 
-## 规范
-
-### 字号 PX-REM 转换
+## 字号 PX-REM 转换
 
 为了方便计算，时常将在\<html>元素中设置`font-size`值为`62.5%`: 相当于在\<html>中设置`font-size`为`10px`
 

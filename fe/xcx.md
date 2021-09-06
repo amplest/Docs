@@ -275,9 +275,3 @@ examList.forEach((e) => {
 小程序 picker 组件中使用 fileds 中的 year 的时候会出现显示错误，如 2020 年显示 20
 
 给 value 默认值的时候如果是使用`new Date().getFullYear()`的话需要使用`String`方法转换下，使用`start/end`的时候也是同理(针对 ios)
-
----
-
-# 💎 项目
-
-## 蓝牙配网(uni-app)
