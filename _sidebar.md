@@ -11,6 +11,7 @@
   - [GIT](tools/git)
   - [NPM](tools/npm)
   - [WAMPServe](tools/wampserve)
+  - [nginx](tools/nginx)
 
 - CMS
   - [DEDECMS](cms/dedecms)
