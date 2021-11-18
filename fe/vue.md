@@ -10,3 +10,4 @@
 "build:dev": "vue-cli-service build --mode development", //加载.env.development
 "build:test": "vue-cli-service build --mode test", //加载.env.test
 ```
+

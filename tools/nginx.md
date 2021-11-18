@@ -5,3 +5,8 @@
 | `nginx.exe -s stop` 或者 `nginx.exe -s quit` | `stop` 是快速停止 nginx，可能并不保存相关信息；`quit` 是完整有序的停止 nginx，并保存相关信息。 |
 | `nginx -s reload`                            | 修改配置文件后重新载入                                                                     |
 | `nginx -t`                                   | 查看配置文件                                                                               |
+
+
+# 关于nginx二级目录反斜杠
+
+`rewrite ^/([a-zA-Z]+)$ /$1/ permanent;`

@@ -2,7 +2,7 @@
 
 ## Vue
 
-- 暂无
+- Vue+H5接入微信支付(JSAPI) 🔗[传送门](fe/project/vue_wechat_pay)
 
 ## 小程序
 

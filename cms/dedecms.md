@@ -33,6 +33,7 @@
 | Code                                                 | Info            |
 | ---------------------------------------------------- | --------------- |
 | {dede:field.pubdate function="MyDate('Y-m-d',@me)"/} | 2021-07-14 格式 |
+| {dede:field name='pubdate' runphp='yes'} @me=strftime('%A %B-%d %Y %H:%M:%S',@me);{/dede:field}            |Nov 01, 2008|
 | {dede:field.title/}                                  | 标题            |
 | {dede:field.body/}                                   | 内容            |
 | {dede:field.writer/}                                 | 作者            |
@@ -177,6 +178,46 @@
 {/dede:channelartlist}
 ```
 
+#### 导航调用判断下拉及icon
+
+``` html
+<div class="menu">
+  <a href="#">News <i class="fa fa-angle-down"></i></a>
+  <div class="item">
+    <a href="#">News</a>
+    <a href="#">Exhibitions</a>
+  </div>
+</div>
+```
+
+``` html
+{dede:channelartlist row=8 typeid='1,5,9,13,15,18'}
+<div class="menu">
+  <a href="{dede:field name='typeurl'/}" title="{dede:field.typename/}"
+    >{dede:field.typename/} {dede:field name=typeid runphp="yes"} global
+    $dsql; $sql = "SELECT id From `dev_arctype` WHERE reid='@me' And
+    ishidden<>1 order by sortrank asc limit 0, 100 "; $row =
+    $dsql->GetOne($sql); @me=is_array($row)?'<i
+      class="fa fa-angle-down"
+    ></i
+    >':''; {/dede:field}
+  </a>
+  {dede:field name=typeid runphp="yes"} global $dsql; $sql = "SELECT id
+  From `dev_arctype` WHERE reid='@me' And ishidden<>1 order by sortrank
+  asc limit 0, 100 "; $row = $dsql->GetOne($sql); @me=is_array($row)?'
+  <div class="item">
+    ':''; {/dede:field} {dede:channel type='son' noself='yes' }
+    <a href="[field:typeurl/]">[field:typename/]</a>
+    {/dede:channel} {dede:field name=typeid runphp="yes"} global $dsql;
+    $sql = "SELECT id From `dev_arctype` WHERE reid='@me' And ishidden<>1
+    order by sortrank asc limit 0, 100 "; $row = $dsql->GetOne($sql);
+    @me=is_array($row)?'
+  </div>
+  ':''; {/dede:field}
+</div>
+{/dede:channelartlist}
+```
+
 #### channelartlist 标签支持 currentstyle
 
 `include\taglib\channelartlist.lib.php`
@@ -264,4 +305,18 @@ else{
   type="text/javascript"
   language="javascript"
 ></script>
+```
+
+### 织梦清表
+
+```bash
+truncate table `dev_arctiny`;
+truncate table `dev_archives`;
+truncate table `dev_addonarticle`;
+truncate table `dev_arctype`;
+
+ALTER TABLE `dev_archives` AUTO_INCREMENT =1;
+ALTER TABLE `dev_arctiny` AUTO_INCREMENT =1;
+ALTER TABLE `dev_addonarticle` AUTO_INCREMENT =1;
+ALTER TABLE `dev_arctype` AUTO_INCREMENT =1;
 ```

@@ -22,19 +22,37 @@ git config user.name "Author Name"
 git config user.email "Author Email"
 ```
 
-## 远程库链接及上传操作
+## Existing folder
 
 ```bash
-# 初始化本地代码仓
+cd existing_folder
 git init
-# 添加本地代码
-git add -A
-# 提交本地代码
-git commit -m "..."
-#添加远程版本库
-git remote add origin git@github.com:username/repositoriesname.git
-# 上传代码
-git push origin master -f
+git remote add origin http://xxx/xxx/xxx-payment-h5.git
+git add .
+git commit -m "Initial commit"
+git push -u origin master
+```
+
+## Create a new repository
+
+```bash
+git clone http://xxx/xxx/xxx-payment-h5.git
+cd xxx-payment-h5
+touch README.md
+git add README.md
+git commit -m "add README"
+git push -u origin master
+```
+
+## Existing Git repository
+
+```bash
+cd existing_repo
+git remote add origin http://xxx/xxx/xxx-payment-h5.git
+# 将本地的所有分支都推送到远程主机
+git push -u origin --all
+# 推送全部未推送过的本地标签
+git push -u origin --tags
 ```
 
 ## CRLF 问题
